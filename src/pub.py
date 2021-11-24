@@ -24,4 +24,4 @@ class Pub:
     def remove_drink(self, drink_name):
         for drink in self.drinks_list:
             if drink_name == drink.name:
-                return self.drinks_list.remove(drink)
+                self.drinks_list.remove(drink)

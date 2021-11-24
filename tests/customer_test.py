@@ -7,7 +7,7 @@ from src.pub import Pub
 class TestCustomer(unittest.TestCase):
     def setUp(self):
         self.customer = Customer("Pedro Sanchez", [], 50.0)
-        self.drink_1 = Drink("Mahou", 4.5, True)
+        self.drink_1 = Drink("Mahou", 5.0, True)
         self.drink_2 = Drink("Coca-Cola", 2.0, False)
         self.pub = Pub("El Tigre", 1000.0, [self.drink_1, self.drink_2])
 
@@ -22,12 +22,13 @@ class TestCustomer(unittest.TestCase):
 
     @unittest.skip('Skip')
     def test_buy_drink(self):
-        self.buy_drink(self.pub, "Mahou")
-        # Check if self.wallet >= pub.get_drink_price("Name")
-        self.assertEqual()
+        self.customer.buy_drink(self.pub, "Mahou")
         # Check money leaves wallet
+        self.assertEqual(45.0, self.customer.wallet)
         # Check money is added to pub.till
+        self.assertEqual(1005.0, self.pub.till)
         # Check drink is in stomach
+        self.assertEqual(1, self.customer.get_stomach_count())
         # Check drink leaves stock
         self.assertEqual(1, self.pub.get_stock_count())
         pass
