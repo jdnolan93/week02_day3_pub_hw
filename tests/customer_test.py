@@ -31,4 +31,3 @@ class TestCustomer(unittest.TestCase):
         self.assertEqual(1, self.customer.get_stomach_count())
         # Check drink leaves stock
         self.assertEqual(1, self.pub.get_stock_count())
-        pass
