@@ -16,10 +16,11 @@ class TestPub(unittest.TestCase):
         self.assertEqual(1000.0, self.pub.till)
 
     def test_pub_drinks_list(self):
-        self.assertEqual([], self.pub.drinks_list)
+        self.assertEqual([self.drink_1, self.drink_2], self.pub.drinks_list)
 
     def test_get_total_till(self):
         pass
 
     def test_get_drinks_list(self):
-        self.assertEqual([self.drink_1, self.drink_2], self.pub.drinks_list)
+        self.assertEqual([self.drink_1, self.drink_2],
+                         self.pub.get_drinks_list())
