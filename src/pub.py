@@ -8,7 +8,7 @@ class Pub:
         if customer.age >= 18:
             return [drink for drink in self.drinks_list]
         else:
-            return [drink for drink in self.drinks_list if drink.status == False]
+            return [drink for drink in self.drinks_list if drink.alcohol_level == 0]
 
     def get_stock_count(self):
         return len(self.drinks_list)

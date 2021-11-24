@@ -4,7 +4,7 @@ from src.drink import Drink
 
 class TestDrink(unittest.TestCase):
     def setUp(self):
-        self.drink = Drink("Tennents", 3.95, True)
+        self.drink = Drink("Tennents", 3.95, 5)
 
     def test_drink_name(self):
         self.assertEqual("Tennents", self.drink.name)
@@ -13,4 +13,4 @@ class TestDrink(unittest.TestCase):
         self.assertEqual(3.95, self.drink.price)
 
     def test_drink_alcoholic_status(self):
-        self.assertEqual(True, self.drink.status)
+        self.assertEqual(5, self.drink.alcohol_level)
