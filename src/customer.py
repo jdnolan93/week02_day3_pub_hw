@@ -18,6 +18,9 @@ class Customer:
         if self.can_afford(pub.get_drink(drink_name)) == False:
             return "Not enough money"
 
+        if pub.check_drunkenness(self) == False:
+            return "Too drunk"
+
         cost = pub.get_drink_price(drink_name)
         self.wallet -= cost
         pub.till += cost

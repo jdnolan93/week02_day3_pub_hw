@@ -31,3 +31,9 @@ class Pub:
 
     def remove_drink(self, drink_name):
         self.drinks_list.remove(self.get_drink(drink_name))
+
+    def check_drunkenness(self, customer):
+        if customer.drunkenness > 3:
+            return False
+
+        return True
