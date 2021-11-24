@@ -26,4 +26,6 @@ class TestPub(unittest.TestCase):
                          self.pub.get_drinks_list())
 
     def test_get_drink_price_by_name(self):
-        self.assertEqual(4.5, self.get_drink_price("Mahou"))
+        self.assertEqual(4.5, self.pub.get_drink_price("Mahou"))
+        self.assertEqual("Drink not in stock",
+                         self.pub.get_drink_price("Dorada"))

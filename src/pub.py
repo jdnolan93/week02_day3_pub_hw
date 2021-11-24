@@ -6,3 +6,10 @@ class Pub:
 
     def get_drinks_list(self):
         return [drink for drink in self.drinks_list]
+
+    def get_drink_price(self, drink_name):
+        for drink in self.drinks_list:
+            if drink_name == drink.name:
+                return drink.price
+            else:
+                return "Drink not in stock"
