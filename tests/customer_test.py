@@ -20,7 +20,7 @@ class TestCustomer(unittest.TestCase):
     def test_customer_wallet(self):
         self.assertEqual(50.0, self.customer.wallet)
 
-    @unittest.skip('Skip')
+    # @unittest.skip('Skip')
     def test_buy_drink(self):
         self.customer.buy_drink(self.pub, "Mahou")
         # Check money leaves wallet

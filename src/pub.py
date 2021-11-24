@@ -17,9 +17,11 @@ class Pub:
             else:
                 return "Drink not in stock"
 
-    def add_drink_to_customer(self, customer, drink):
+    def add_drink_to_customer(self, customer, drink_name):
         # Always call this function BEFORE remove_drink()
-        customer.stomach.append(drink)
+        for drink in self.drinks_list:
+            if drink_name == drink.name:
+                customer.stomach.append(drink)
 
     def remove_drink(self, drink_name):
         for drink in self.drinks_list:

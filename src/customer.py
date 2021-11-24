@@ -11,6 +11,6 @@ class Customer:
         cost = pub.get_drink_price(drink_name)
         self.wallet -= cost
         pub.till += cost
-        pub.add_drink_to_customer()
+        pub.add_drink_to_customer(self, drink_name)
+        pub.remove_drink(drink_name)
         # Check if self.wallet >= pub.get_drink_price("Name")
-        pass
