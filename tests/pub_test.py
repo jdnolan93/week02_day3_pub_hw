@@ -18,8 +18,8 @@ class TestPub(unittest.TestCase):
     def test_pub_drinks_list(self):
         self.assertEqual([self.drink_1, self.drink_2], self.pub.drinks_list)
 
-    def test_get_total_till(self):
-        pass
+    def test_get_total_stock(self):
+        self.assertEqual(2, self.get_stock_count())
 
     def test_get_drinks_list(self):
         self.assertEqual([self.drink_1, self.drink_2],
