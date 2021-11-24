@@ -31,3 +31,7 @@ class TestCustomer(unittest.TestCase):
         self.assertEqual(1, self.customer.get_stomach_count())
         # Check drink leaves stock
         self.assertEqual(1, self.pub.get_stock_count())
+
+    def test_alcohol_level(self):
+        self.customer.buy_drink(self.pub, "Mahou")
+        self.assertEqual(5, self.customer.drunkenness)
