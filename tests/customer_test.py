@@ -6,7 +6,7 @@ from src.pub import Pub
 
 class TestCustomer(unittest.TestCase):
     def setUp(self):
-        self.customer = Customer("Pedro Sanchez", [], 50.0)
+        self.customer = Customer("Pedro Sanchez", 50, [], 50.0)
         self.drink_1 = Drink("Mahou", 5.0, True)
         self.drink_2 = Drink("Coca-Cola", 2.0, False)
         self.pub = Pub("El Tigre", 1000.0, [self.drink_1, self.drink_2])

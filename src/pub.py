@@ -4,8 +4,11 @@ class Pub:
         self.till = float(till)
         self.drinks_list = drinks_list
 
-    def get_drinks_list(self):
-        return [drink for drink in self.drinks_list]
+    def get_drinks_list(self, customer):
+        if customer.age >= 18:
+            return [drink for drink in self.drinks_list]
+        else:
+            return [drink for drink in self.drinks_list if drink.status == False]
 
     def get_stock_count(self):
         return len(self.drinks_list)
