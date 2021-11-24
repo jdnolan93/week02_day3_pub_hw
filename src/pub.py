@@ -7,6 +7,9 @@ class Pub:
     def get_drinks_list(self):
         return [drink for drink in self.drinks_list]
 
+    def get_stock_count(self):
+        return len(self.drinks_list)
+
     def get_drink_price(self, drink_name):
         for drink in self.drinks_list:
             if drink_name == drink.name:
