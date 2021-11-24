@@ -62,3 +62,7 @@ class TestPub(unittest.TestCase):
     def test_buy_non_stock_drink(self):
         self.assertEqual("Drink not in stock",
                          self.adult_customer.buy_drink(self.pub, "Dorada"))
+
+    def test_underage_buy_alcohol(self):
+        self.assertEqual("Need to be over 18",
+                         self.underage_customer.buy_drink(self.pub, "Cruzcampo"))

@@ -21,16 +21,11 @@ class TestCustomer(unittest.TestCase):
     def test_customer_wallet(self):
         self.assertEqual(50.0, self.customer.wallet)
 
-    # @unittest.skip('Skip')
     def test_buy_drink(self):
         self.customer.buy_drink(self.pub, "Mahou")
-        # Check money leaves wallet
         self.assertEqual(45.0, self.customer.wallet)
-        # Check money is added to pub.till
         self.assertEqual(1005.0, self.pub.till)
-        # Check drink is in stomach
         self.assertEqual(1, self.customer.get_stomach_count())
-        # Check drink leaves stock
         self.assertEqual(1, self.pub.get_stock_count())
 
     def test_alcohol_level(self):

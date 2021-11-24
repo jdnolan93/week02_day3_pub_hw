@@ -18,6 +18,9 @@ class Customer:
         if pub.in_stock(drink_name) == False:
             return "Drink not in stock"
 
+        if pub.check_age(self, drink_name) == False:
+            return "Need to be over 18"
+
         if self.can_afford(pub.get_drink(drink_name)) == False:
             return "Not enough money"
 
