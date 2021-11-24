@@ -29,4 +29,5 @@ class TestCustomer(unittest.TestCase):
         # Check money is added to pub.till
         # Check drink is in stomach
         # Check drink leaves stock
+        self.assertEqual(1, self.pub.get_stock_count())
         pass
