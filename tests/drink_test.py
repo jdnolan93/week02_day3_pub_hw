@@ -14,3 +14,6 @@ class TestDrink(unittest.TestCase):
 
     def test_drink_alcoholic_status(self):
         self.assertEqual(5, self.drink.alcohol_level)
+
+    def test_return_drink(self):
+        self.assertEqual(self.drink, self.drink.return_drink("Tennents"))

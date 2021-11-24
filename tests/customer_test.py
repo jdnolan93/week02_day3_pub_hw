@@ -7,6 +7,7 @@ from src.pub import Pub
 class TestCustomer(unittest.TestCase):
     def setUp(self):
         self.customer = Customer("Pedro Sanchez", 50, [], 50.0)
+        self.broke_customer = Customer("CodeClan Student", 30, [], 1.0)
         self.drink_1 = Drink("Mahou", 5.0, 5)
         self.drink_2 = Drink("Coca-Cola", 2.0, 0)
         self.pub = Pub("El Tigre", 1000.0, [self.drink_1, self.drink_2])
@@ -33,5 +34,10 @@ class TestCustomer(unittest.TestCase):
         self.assertEqual(1, self.pub.get_stock_count())
 
     def test_alcohol_level(self):
+        self.assertEqual(0, self.customer.drunkenness)
         self.customer.buy_drink(self.pub, "Mahou")
         self.assertEqual(5, self.customer.drunkenness)
+
+    def test_can_afford(self):
+        self.assertEqual(True, self.customer.can_afford(self.drink_1))
+        self.assertEqual(False, self.broke_customer.can_afford(self.drink_1))

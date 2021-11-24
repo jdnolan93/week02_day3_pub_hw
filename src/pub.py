@@ -13,20 +13,21 @@ class Pub:
     def get_stock_count(self):
         return len(self.drinks_list)
 
-    def get_drink_price(self, drink_name):
+    def get_drink(self, drink_name):
         for drink in self.drinks_list:
-            if drink_name == drink.name:
-                return drink.price
-            else:
-                return "Drink not in stock"
+            if drink.return_drink(drink_name):
+                return drink
+
+    def get_drink_price(self, drink_name):
+        drink = self.get_drink(drink_name)
+        if drink == None:
+            return "Drink not in stock"
+        else:
+            return drink.price
 
     def add_drink_to_customer(self, customer, drink_name):
         # Always call this function BEFORE remove_drink()
-        for drink in self.drinks_list:
-            if drink_name == drink.name:
-                customer.stomach.append(drink)
+        customer.stomach.append(self.get_drink(drink_name))
 
     def remove_drink(self, drink_name):
-        for drink in self.drinks_list:
-            if drink_name == drink.name:
-                self.drinks_list.remove(drink)
+        self.drinks_list.remove(self.get_drink(drink_name))
