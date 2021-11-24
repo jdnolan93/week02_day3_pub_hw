@@ -37,3 +37,9 @@ class Pub:
             return False
 
         return True
+
+    def in_stock(self, drink_name):
+        if self.get_drink(drink_name) == None:
+            return False
+
+        return True

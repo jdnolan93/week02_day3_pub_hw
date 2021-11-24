@@ -58,3 +58,7 @@ class TestPub(unittest.TestCase):
             "Too drunk", self.adult_customer.buy_drink(self.pub, "Cruzcampo"))
         self.assertEqual(2, self.pub.get_stock_count())
         self.assertEqual(45.5, self.adult_customer.wallet)
+
+    def test_buy_non_stock_drink(self):
+        self.assertEqual("Drink not in stock",
+                         self.adult_customer.buy_drink(self.pub, "Dorada"))

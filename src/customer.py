@@ -15,6 +15,9 @@ class Customer:
         return True
 
     def buy_drink(self, pub, drink_name):
+        if pub.in_stock(drink_name) == False:
+            return "Drink not in stock"
+
         if self.can_afford(pub.get_drink(drink_name)) == False:
             return "Not enough money"
 
