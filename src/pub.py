@@ -26,6 +26,18 @@ class Pub:
         else:
             return drink.price
 
+    def get_food(self, food_name):
+        for food in self.food_list:
+            if food.return_food(food_name):
+                return food
+
+    def get_food_price(self, food_name):
+        food = self.get_food(food_name)
+        if food == None:
+            return "Food not in stock"
+        else:
+            return food.price
+
     def check_age(self, customer, drink_name):
         age = customer.age
         drink = self.get_drink(drink_name).alcohol_level
@@ -49,17 +61,4 @@ class Pub:
         if self.get_drink(drink_name) == None:
             return False
         return True
-
-    def get_food(self, food_name):
-        for food in self.food_list:
-            if food.return_food(food_name):
-                return food
-
-    def get_food_price(self, food_name):
-        food = self.get_food(food_name)
-        if food == None:
-            return "Food not in stock"
-        else:
-            return food.price
-
     

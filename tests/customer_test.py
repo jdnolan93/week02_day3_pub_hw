@@ -45,9 +45,9 @@ class TestCustomer(unittest.TestCase):
         self.assertEqual("Not enough money",
                          self.broke_customer.buy_drink(self.pub, "Coca-Cola"))
 
-    # def test_buy_food(self):
-    #     self.customer.buy_food(self.pub, "Montadito")
-    #     self.assertEqual(49.0, self.customer.wallet)
+    def test_buy_food(self):
+        self.customer.buy_food(self.pub, "Montadito")
+        self.assertEqual(49.0, self.customer.wallet)
     #     self.assertEqual(1001.0, self.pub.till)
     #     self.assertEqual(2, self.customer.get_stomach_count())
     #     self.assertEqual(1, self.pub.get_stock_count())
