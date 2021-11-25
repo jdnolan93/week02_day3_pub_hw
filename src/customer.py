@@ -35,8 +35,6 @@ class Customer:
 
         pub.add_drink_to_customer(self, drink_name)
         pub.remove_drink(drink_name)
-        # Check if self.wallet >= pub.get_drink_price("Name")
-
 
     def buy_food(self, pub, food_name):
         if pub.in_stock_food(food_name) == False:
