@@ -12,8 +12,10 @@ class TestPub(unittest.TestCase):
         self.drink_1 = Drink("Mahou", 4.5, 5)
         self.drink_2 = Drink("Coca-Cola", 2.0, 0)
         self.drink_3 = Drink("Cruzcampo", 5.0, 5)
+        self.food_1 = Food("Montadito", 1.0, 2)
+        self.food_2 = Food("Tortilla", 2.5, 5)
         self.pub = Pub("El Tigre", 1000.0, [
-                       self.drink_1, self.drink_2, self.drink_3])
+                       self.drink_1, self.drink_2, self.drink_3], [self.food_1, self.food_2])
 
     def test_pub_name(self):
         self.assertEqual("El Tigre", self.pub.name)
@@ -67,3 +69,6 @@ class TestPub(unittest.TestCase):
     def test_underage_buy_alcohol(self):
         self.assertEqual("Need to be over 18",
                          self.underage_customer.buy_drink(self.pub, "Cruzcampo"))
+
+    def test_get_food_list(self):
+        self.assertEqual([self.food_1, self.food_2], self.pub.food_list)

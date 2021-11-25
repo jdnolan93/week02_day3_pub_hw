@@ -10,7 +10,9 @@ class TestCustomer(unittest.TestCase):
         self.broke_customer = Customer("CodeClan Student", 30, [], 1.0)
         self.drink_1 = Drink("Mahou", 5.0, 5)
         self.drink_2 = Drink("Coca-Cola", 2.0, 0)
-        self.pub = Pub("El Tigre", 1000.0, [self.drink_1, self.drink_2])
+        self.food_1 = Food("Montadito", 1.0, 2)
+        self.food_2 = Food("Tortilla", 2.5, 5)
+        self.pub = Pub("El Tigre", 1000.0, [self.drink_1, self.drink_2], [self.food_1, self.food_2])
 
     def test_customer_name(self):
         self.assertEqual("Pedro Sanchez", self.customer.name)
