@@ -49,3 +49,10 @@ class Pub:
         if self.get_drink(drink_name) == None:
             return False
         return True
+
+    def get_food(self, food_name):
+        for food in self.food_list:
+            if food.return_food(food_name):
+                return food
+
+    

@@ -72,3 +72,7 @@ class TestPub(unittest.TestCase):
 
     def test_get_food_list(self):
         self.assertEqual([self.food_1, self.food_2], self.pub.food_list)
+
+    def test_get_food(self):
+        self.assertEqual(self.food_1, self.pub.get_food("Montadito"))
+
