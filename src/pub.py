@@ -68,4 +68,9 @@ class Pub:
         if self.get_drink(drink_name) == None:
             return False
         return True
+
+    def in_stock_food(self, food_name):
+        if self.get_food(food_name) == None:
+            return False
+        return True
     

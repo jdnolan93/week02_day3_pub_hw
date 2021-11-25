@@ -39,7 +39,7 @@ class Customer:
 
 
     def buy_food(self, pub, food_name):
-        if pub.in_stock(food_name) == False:
+        if pub.in_stock_food(food_name) == False:
             return "Food not in stock"
 
         if self.can_afford(pub.get_food(food_name)) == False:
@@ -49,4 +49,4 @@ class Customer:
         self.wallet -= cost
         pub.till += cost
 
-        self.drunkenness -= pub.get_food(food_name).alcohol_level
+        self.drunkenness -= pub.get_food(food_name).rejuvination_level
