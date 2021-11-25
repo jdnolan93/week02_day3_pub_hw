@@ -38,6 +38,8 @@ class TestCustomer(unittest.TestCase):
     def test_can_afford(self):
         self.assertEqual(True, self.customer.can_afford(self.drink_1))
         self.assertEqual(False, self.broke_customer.can_afford(self.drink_1))
+        self.assertEqual(True, self.customer.can_afford(self.food_1))
+        self.assertEqual(False, self.broke_customer.can_afford(self.food_2))
 
     def test_buy_drink_no_money(self):
         self.assertEqual("Not enough money",
