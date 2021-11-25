@@ -48,6 +48,18 @@ class TestCustomer(unittest.TestCase):
     def test_buy_food(self):
         self.customer.buy_food(self.pub, "Montadito")
         self.assertEqual(49.0, self.customer.wallet)
-    #     self.assertEqual(1001.0, self.pub.till)
-    #     self.assertEqual(2, self.customer.get_stomach_count())
-    #     self.assertEqual(1, self.pub.get_stock_count())
+        self.assertEqual(1001.0, self.pub.till)
+        self.assertEqual(1, self.customer.get_stomach_count())
+        self.assertEqual(1, self.pub.get_food_stock_count())
+
+    def test_buy_food_and_drink(self):
+        self.customer.buy_drink(self.pub, "Mahou")
+        self.assertEqual(45.0, self.customer.wallet)
+        self.assertEqual(1005.0, self.pub.till)
+        self.assertEqual(1, self.customer.get_stomach_count())
+        self.assertEqual(1, self.pub.get_stock_count())
+        self.customer.buy_food(self.pub, "Montadito")
+        self.assertEqual(44.0, self.customer.wallet)
+        self.assertEqual(1006.0, self.pub.till)
+        self.assertEqual(2, self.customer.get_stomach_count())
+        self.assertEqual(1, self.pub.get_food_stock_count())

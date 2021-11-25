@@ -50,3 +50,6 @@ class Customer:
         pub.till += cost
 
         self.drunkenness -= pub.get_food(food_name).rejuvination_level
+        
+        pub.add_food_to_customer(self, food_name)
+        pub.remove_food(food_name)

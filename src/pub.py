@@ -38,6 +38,9 @@ class Pub:
         else:
             return food.price
 
+    def get_food_stock_count(self):
+        return len(self.food_list)
+
     def check_age(self, customer, drink_name):
         age = customer.age
         drink = self.get_drink(drink_name).alcohol_level
@@ -73,4 +76,11 @@ class Pub:
         if self.get_food(food_name) == None:
             return False
         return True
+    
+    def add_food_to_customer(self, customer, food_name):
+        # Always call this function BEFORE remove_food()
+        customer.stomach.append(self.get_food(food_name))
+
+    def remove_food(self, food_name):
+        self.food_list.remove(self.get_food(food_name))
     
