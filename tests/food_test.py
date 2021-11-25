@@ -3,7 +3,7 @@ from src.food import Food
 
 class TestFood(unittest.TestCase):
     def setUp(self):
-        self.food = Food("Montadito", 1, 2)
+        self.food = Food("Montadito", 1.0, 2)
 
     def test_food_name(self):
         self.assertEqual("Montadito", self.food.name)
