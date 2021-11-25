@@ -52,6 +52,13 @@ class Pub:
     def remove_drink(self, drink_name):
         self.drinks_list.remove(self.get_drink(drink_name))
 
+    def remove_food(self, food_name):
+        food = self.get_food(food_name)
+        if food == None:
+            return "Food not in stock"
+        else:
+            return food.price
+
     def check_drunkenness(self, customer):
         if customer.drunkenness > 3:
             return False
