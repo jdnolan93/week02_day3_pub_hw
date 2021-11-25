@@ -55,4 +55,11 @@ class Pub:
             if food.return_food(food_name):
                 return food
 
+    def get_food_price(self, food_name):
+        food = self.get_food(food_name)
+        if food == None:
+            return "Food not in stock"
+        else:
+            return food.price
+
     
